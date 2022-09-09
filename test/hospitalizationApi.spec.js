@@ -29,4 +29,23 @@ describe("hospitalization api v3", function () {
       expect(body[0]).to.contain.keys(["id", "datum"]);
     });
   });
+
+  context("GET /api/v3/hospitalizace/{id}", function () {
+    let check, body;
+    const id = "a81c8efe-8a97-4b33-8728-4acdcb8152d4";
+    this.beforeAll(async function () {
+      [check, body] = await api.getHospitalizationOfId(id, {
+        options: { headers: { accept: "application/json" } },
+      });
+    });
+
+    it("status code is 200", function () {
+      expect(api.response.status).to.be.equal(200);
+    });
+
+    it("returned body is reasonably OK - status 'true', object has 'id', 'datum' properties", function () {
+      expect(check).to.be.true;
+      expect(body).to.contain.keys(["id", "datum"]);
+    });
+  });
 });
