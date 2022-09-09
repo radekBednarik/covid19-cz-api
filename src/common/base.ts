@@ -1,12 +1,14 @@
-import fetch, { RequestInit } from "node-fetch";
+import fetch, { RequestInit, Response } from "node-fetch";
 
 export default class Caller {
   private readonly _baseUrl;
   private readonly _apiToken;
+  public response?: Response;
 
   constructor(baseUrl: string, apiToken: string) {
     this._baseUrl = baseUrl;
     this._apiToken = apiToken;
+    this.response = undefined;
   }
 
   private _createUrl(resource: string, queryParams?: Record<string, string>) {
@@ -23,9 +25,9 @@ export default class Caller {
   ): Promise<[boolean, unknown]> {
     const fullUrl = this._createUrl(resource, queryParams);
     try {
-      const response = await fetch(fullUrl, options);
-      const body = await response.json();
-      if (response.ok) {
+      this.response = await fetch(fullUrl, options);
+      const body = await this.response.json();
+      if (this.response.ok) {
         return [true, body];
       }
       return [false, body];

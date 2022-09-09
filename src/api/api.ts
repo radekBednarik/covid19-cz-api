@@ -1,10 +1,13 @@
-import Caller from "common/base";
+import { Response } from "node-fetch";
+import Caller from "../common/base.js";
 
 export class Hospitalization {
   private _caller;
+  public response?: Response;
 
   constructor(baseUrl: string, apiToken: string) {
     this._caller = new Caller(baseUrl, apiToken);
+    this.response = this._caller.response;
   }
 
   /**
@@ -20,7 +23,9 @@ export class Hospitalization {
     options?: RequestInit;
     resource?: string;
   }) {
-    return await this._caller.request(resource, queryParams, options);
+    const responseBody = await this._caller.request(resource, queryParams, options);
+    this.response = this._caller.response;
+    return responseBody;
   }
 
   /**
@@ -36,6 +41,8 @@ export class Hospitalization {
     }: { queryParams?: Record<string, string>; options?: RequestInit; resource?: string }
   ) {
     const fullUrl = `${resource}/${id}`;
-    return await this._caller.request(fullUrl, queryParams, options);
+    const responseBody = await this._caller.request(fullUrl, queryParams, options);
+    this.response = this._caller.response;
+    return responseBody;
   }
 }
