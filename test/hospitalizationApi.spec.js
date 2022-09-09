@@ -5,7 +5,7 @@
 import { expect } from "chai";
 import apiConfig from "./data/apiConfig.json" assert { type: "json" };
 
-import { Hospitalization } from "../dist/api/api.js";
+import { Hospitalization } from "../dist/api/hospitalization.js";
 
 describe("hospitalization api v3", function () {
   const api = new Hospitalization(apiConfig.baseUrl, apiConfig.apiToken);
