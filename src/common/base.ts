@@ -24,12 +24,15 @@ export default class Caller {
     options?: RequestInit
   ): Promise<[boolean, unknown]> {
     const fullUrl = this._createUrl(resource, queryParams);
+
     try {
       this.response = await fetch(fullUrl, options);
       const body = await this.response.json();
+
       if (this.response.ok) {
         return [true, body];
       }
+
       return [false, body];
     } catch (error) {
       console.error(`[!] ERROR when calling ${fullUrl}: ${error}`);
