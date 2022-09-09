@@ -22,11 +22,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^9.1.1",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
+    "chai": "^4.3.6",
     "eslint": "^8.23.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "mocha": "^10.0.0",
     "pre-commit": "^1.2.2",
     "prettier": "^2.7.1",
     "typescript": "^4.8.3"
@@ -34,5 +38,8 @@
   "prettier": {
     "tabWidth": 2,
     "printWidth": 109
+  },
+  "dependencies": {
+    "node-fetch": "^3.2.10"
   }
 }
