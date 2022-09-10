@@ -8,11 +8,11 @@
     "build": "tsc",
     "tsc-lint": "tsc --noEmit --pretty",
     "lint-staged": "lint-staged",
-    "test": "mocha --full-trace",
+    "test": "mocha",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{js, ts}": [
+    "*.{js, ts, d.ts}": [
       "prettier --write",
       "eslint"
     ]
