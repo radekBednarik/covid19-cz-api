@@ -15,33 +15,45 @@ describe("incidence api v3", function () {
       });
     });
 
-    it("status code is 200", function () {
+    it("response is OK", function () {
       expect(api.response.status).to.be.equal(200);
-    });
-
-    it("returned body is reasonably ok - status 'true', length '100', element has 'id', 'datum'", function () {
       expect(check).to.be.true;
       expect(body).to.have.length(100);
       expect(body[0]).to.contain.keys(["id", "datum"]);
     });
   });
 
-  context("GET /api/v3/incidence-7-14-cr/{id}", function () {
+  context("GET /api/v3/incidence-7-14-kraje", function () {
     let check, body;
-    const id = "07f1e4fe-db89-4382-91cf-dede746ede9e";
     this.beforeAll(async function () {
-      [check, body] = await api.getStateDataOf(id, {
+      [check, body] = await api.getRegionData({
+        queryParams: { page: "1", itemsPerPage: "100" },
         options: { headers: { accept: "application/json" } },
       });
     });
 
-    it("status code is 200", function () {
+    it("response is OK", function () {
       expect(api.response.status).to.be.equal(200);
+      expect(check).to.be.true;
+      expect(body).to.have.length(100);
+      expect(body[0]).to.contain.keys(["id", "datum"]);
+    });
+  });
+
+  context("GET /api/v3/incidence-7-14-okresy", function () {
+    let check, body;
+    this.beforeAll(async function () {
+      [check, body] = await api.getDistrictData({
+        queryParams: { page: "1", itemsPerPage: "100" },
+        options: { headers: { accept: "application/json" } },
+      });
     });
 
-    it("returned body is reasonably ok - status 'true', has 'id', 'datum' props", function () {
+    it("response is OK", function () {
+      expect(api.response.status).to.be.equal(200);
       expect(check).to.be.true;
-      expect(body).to.contain.keys(["id", "datum"]);
+      expect(body).to.have.length(100);
+      expect(body[0]).to.contain.keys(["id", "datum"]);
     });
   });
 });
