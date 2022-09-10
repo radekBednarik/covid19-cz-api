@@ -2,7 +2,7 @@ import { Response } from "node-fetch";
 import Caller from "../common/base.js";
 import api from "../config/api.json" assert { type: "json" };
 
-import { CollectionArgs, SpecificIdArgs } from "../types/api.js";
+import { CollectionArgs, SpecificIdArgs } from "./api.js";
 
 export class Incidence {
   private _caller;
