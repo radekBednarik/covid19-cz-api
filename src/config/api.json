@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "baseUrl": "https://onemocneni-aktualne.mzcr.cz",
+  "resources": {
+    "hospitalization": {
+      "collection": "/api/v3/hospitalizace",
+      "specificId": "/api/v3/hospitalizace/{{id}}"
+    },
+    "incidence": {
+      "state": {
+        "collection": "/api/v3/incidence-7-14-cr",
+        "specificId": "/api/v3/incidence-7-14-cr/{{id}}"
+      },
+      "region": {
+        "collection": "/api/v3/incidence-7-14-kraje",
+        "specificId": "/api/v3/incidence-7-14-kraje/{{id}}"
+      },
+      "district": {
+        "collection": "/api/v3/incidence-7-14-okresy",
+        "specificId": "/api/v3/incidence-7-14-okresy/{{id}}"
+      }
+    }
+  }
+}
