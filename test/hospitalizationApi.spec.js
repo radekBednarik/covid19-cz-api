@@ -13,7 +13,7 @@ describe("hospitalization api v3", function () {
   context("GET /api/v3/hospitalizace", function () {
     let check, body;
     this.beforeAll(async function () {
-      [check, body] = await api.getHospitalization({
+      [check, body] = await api.getData({
         queryParams: { page: "1", itemsPerPage: "100" },
         options: { headers: { accept: "application/json" } },
       });
@@ -34,7 +34,7 @@ describe("hospitalization api v3", function () {
     let check, body;
     const id = "a81c8efe-8a97-4b33-8728-4acdcb8152d4";
     this.beforeAll(async function () {
-      [check, body] = await api.getHospitalizationOfId(id, {
+      [check, body] = await api.getDataOf(id, {
         options: { headers: { accept: "application/json" } },
       });
     });

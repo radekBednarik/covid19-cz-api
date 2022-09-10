@@ -9,7 +9,7 @@ describe("incidence api v3", function () {
   context("GET /api/v3/incidence-7-14-cr", function () {
     let check, body;
     this.beforeAll(async function () {
-      [check, body] = await api.getState({
+      [check, body] = await api.getStateData({
         queryParams: { page: "1", itemsPerPage: "100" },
         options: { headers: { accept: "application/json" } },
       });
@@ -30,7 +30,7 @@ describe("incidence api v3", function () {
     let check, body;
     const id = "07f1e4fe-db89-4382-91cf-dede746ede9e";
     this.beforeAll(async function () {
-      [check, body] = await api.getStateId(id, {
+      [check, body] = await api.getStateDataOf(id, {
         options: { headers: { accept: "application/json" } },
       });
     });

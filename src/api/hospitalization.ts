@@ -14,7 +14,7 @@ export class Hospitalization {
    * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
    * `/api/v3/hospitalizace`
    */
-  public async getHospitalization({
+  public async getData({
     queryParams,
     options,
     resource = "/api/v3/hospitalizace",
@@ -32,7 +32,7 @@ export class Hospitalization {
    * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
    * `/api/v3/hospitalizace/{id}`
    */
-  public async getHospitalizationOfId(
+  public async getDataOf(
     id: string,
     {
       queryParams,

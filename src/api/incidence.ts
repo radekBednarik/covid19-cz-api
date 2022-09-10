@@ -10,7 +10,7 @@ export class Incidence {
     this.response = this._caller.response;
   }
 
-  public async getState({
+  public async getStateData({
     queryParams,
     options,
     resource = "/api/v3/incidence-7-14-cr",
@@ -24,7 +24,7 @@ export class Incidence {
     return responseBody;
   }
 
-  public async getStateId(
+  public async getStateDataOf(
     id: string,
     {
       queryParams,
