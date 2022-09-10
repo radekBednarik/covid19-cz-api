@@ -1,5 +1,6 @@
 import { Response } from "node-fetch";
 import Caller from "../common/base.js";
+import { CollectionArgs, SpecificIdArgs } from "../types/api.js";
 
 export class Hospitalization {
   private _caller;
@@ -14,15 +15,7 @@ export class Hospitalization {
    * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
    * `/api/v3/hospitalizace`
    */
-  public async getData({
-    queryParams,
-    options,
-    resource = "/api/v3/hospitalizace",
-  }: {
-    queryParams?: Record<string, string>;
-    options?: RequestInit;
-    resource?: string;
-  }) {
+  public async getData({ queryParams, options, resource = "/api/v3/hospitalizace" }: CollectionArgs) {
     const responseBody = await this._caller.request(resource, queryParams, options);
     this.response = this._caller.response;
     return responseBody;
@@ -32,16 +25,9 @@ export class Hospitalization {
    * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
    * `/api/v3/hospitalizace/{id}`
    */
-  public async getDataOf(
-    id: string,
-    {
-      queryParams,
-      options,
-      resource = "/api/v3/hospitalizace",
-    }: { queryParams?: Record<string, string>; options?: RequestInit; resource?: string }
-  ) {
+  public async getDataOf(id: string, { options, resource = "/api/v3/hospitalizace" }: SpecificIdArgs) {
     const fullUrl = `${resource}/${id}`;
-    const responseBody = await this._caller.request(fullUrl, queryParams, options);
+    const responseBody = await this._caller.request(fullUrl, undefined, options);
     this.response = this._caller.response;
     return responseBody;
   }
