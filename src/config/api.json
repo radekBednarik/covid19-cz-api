@@ -19,6 +19,20 @@
         "collection": "/api/v3/incidence-7-14-okresy",
         "specificId": "/api/v3/incidence-7-14-okresy/{{id}}"
       }
+    },
+    "infected": {
+      "hospitalized-tests": {
+        "collection": "/api/v3/nakazeni-hospitalizace-testy",
+        "specificId": "/api/v3/nakazeni-hospitalizace-testy/{{id}}"
+      },
+      "reinfected": {
+        "collection": "/api/v3/nakazeni-reinfekce",
+        "specificId": "/api/v3/nakazeni-reinfekce/{{id}}"
+      },
+      "cured-dead-tests": {
+        "collection": "/api/v3/nakazeni-vyleceni-umrti-testy",
+        "specificId": "/api/v3/nakazeni-vyleceni-umrti-testy/{{date}}"
+      }
     }
   }
 }
