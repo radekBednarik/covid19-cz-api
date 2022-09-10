@@ -19,6 +19,10 @@ export class Infected {
     return responseBody;
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/nakazeni-hospitalizace-testy
+   */
   public async getTestsDataOfHospitalized({
     queryParams,
     options,
@@ -27,6 +31,10 @@ export class Infected {
     return await this._request(resource, queryParams, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/nakazeni-hospitalizace-testy/{id}
+   */
   public async getTestsDataOfHospitalizedOf(
     id: string,
     { options, resource = api.resources.infected["hospitalized-tests"].collection }: SpecificIdArgs
@@ -35,6 +43,10 @@ export class Infected {
     return await this._request(fullUrl, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/nakazeni-reinfekce
+   */
   public async getReinfectedData({
     queryParams,
     options,
@@ -43,6 +55,10 @@ export class Infected {
     return await this._request(resource, queryParams, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/nakazeni-reinfekce/{id}
+   */
   public async getReinfectedDataOf(
     id: string,
     { options, resource = api.resources.infected.reinfected.collection }: SpecificIdArgs
@@ -51,6 +67,10 @@ export class Infected {
     return await this._request(fullUrl, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/nakazeni-vyleceni-umrti-testy
+   */
   public async getCuredDeadTestsData({
     queryParams,
     options,
@@ -59,6 +79,12 @@ export class Infected {
     return await this._request(resource, queryParams, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/nakazeni-vyleceni-umrti-testy/{date}`
+   *
+   * `{date}` in format `yyyy-mm-dd`
+   */
   public async getCuredDeadTestsDataAtDate(
     date: string,
     { options, resource = api.resources.infected["cured-dead-tests"].collection }: SpecificIdArgs
