@@ -1,5 +1,6 @@
 import { Response } from "node-fetch";
 import Caller from "../common/base.js";
+import api from "../config/api.json" assert { type: "json" };
 
 import { CollectionArgs, SpecificIdArgs } from "../types/api.js";
 
@@ -25,7 +26,7 @@ export class Incidence {
   public async getStateData({
     queryParams,
     options,
-    resource = "/api/v3/incidence-7-14-cr",
+    resource = api.resources.incidence.state.collection,
   }: CollectionArgs) {
     return await this._request(resource, queryParams, options);
   }
@@ -36,7 +37,7 @@ export class Incidence {
    */
   public async getStateDataOf(
     id: string,
-    { options, resource = "/api/v3/incidence-7-14-cr" }: SpecificIdArgs
+    { options, resource = api.resources.incidence.state.collection }: SpecificIdArgs
   ) {
     const fullUrl = `${resource}/${id}`;
     return await this._request(fullUrl, undefined, options);
@@ -49,7 +50,7 @@ export class Incidence {
   public async getRegionData({
     queryParams,
     options,
-    resource = "/api/v3/incidence-7-14-kraje",
+    resource = api.resources.incidence.region.collection,
   }: CollectionArgs) {
     return await this._request(resource, queryParams, options);
   }
@@ -60,7 +61,7 @@ export class Incidence {
    */
   public async getRegionDataOf(
     id: string,
-    { options, resource = "/api/v3/incidence-7-14-kraje" }: SpecificIdArgs
+    { options, resource = api.resources.incidence.region.collection }: SpecificIdArgs
   ) {
     const fullUrl = `${resource}/${id}`;
     return await this._request(fullUrl, undefined, options);
@@ -73,7 +74,7 @@ export class Incidence {
   public async getDistrictData({
     queryParams,
     options,
-    resource = "/api/v3/incidence-7-14-okresy",
+    resource = api.resources.incidence.district.collection,
   }: CollectionArgs) {
     return await this._request(resource, queryParams, options);
   }
@@ -84,7 +85,7 @@ export class Incidence {
    */
   public async getDistricDataOf(
     id: string,
-    { options, resource = "/api/v3/incidence-7-14-okresy" }: SpecificIdArgs
+    { options, resource = api.resources.incidence.district.collection }: SpecificIdArgs
   ) {
     const fullUrl = `${resource}/${id}`;
     return await this._request(fullUrl, undefined, options);

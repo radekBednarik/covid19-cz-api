@@ -1,5 +1,6 @@
 import { Response } from "node-fetch";
 import Caller from "../common/base.js";
+import api from "../config/api.json" assert { type: "json" };
 import { CollectionArgs, SpecificIdArgs } from "../types/api.js";
 
 export class Hospitalization {
@@ -21,7 +22,11 @@ export class Hospitalization {
    * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
    * `/api/v3/hospitalizace`
    */
-  public async getData({ queryParams, options, resource = "/api/v3/hospitalizace" }: CollectionArgs) {
+  public async getData({
+    queryParams,
+    options,
+    resource = api.resources.hospitalization.collection,
+  }: CollectionArgs) {
     return await this._request(resource, queryParams, options);
   }
 
@@ -29,7 +34,10 @@ export class Hospitalization {
    * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
    * `/api/v3/hospitalizace/{id}`
    */
-  public async getDataOf(id: string, { options, resource = "/api/v3/hospitalizace" }: SpecificIdArgs) {
+  public async getDataOf(
+    id: string,
+    { options, resource = api.resources.hospitalization.collection }: SpecificIdArgs
+  ) {
     const fullUrl = `${resource}/${id}`;
     return await this._request(fullUrl, undefined, options);
   }
