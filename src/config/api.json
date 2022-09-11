@@ -94,6 +94,26 @@
       "professions": {
         "collection": "/api/v3/ockovani-profese",
         "specificId": "/api/v3/ockovani-profese/{{id}}"
+      },
+      "registration": {
+        "collection": "/api/v3/ockovani-registrace",
+        "specificId": "/api/v3/ockovani-registrace/{{id}}"
+      },
+      "reservations": {
+        "collection": "/api/v3/ockovani-rezervace",
+        "specificId": "/api/v3/ockovani-rezervace/{{id}}"
+      },
+      "consumption": {
+        "collection": "/api/v3/ockovani-spotreba",
+        "specificId": "/api/v3/ockovani-spotreba/{{id}}"
+      },
+      "deaths": {
+        "collection": "/api/v3/ockovani-umrti",
+        "specificId": "/api/v3/ockovani-umrti/{{id}}"
+      },
+      "basic-overview": {
+        "collection": "/api/v3/ockovani-zakladni-prehled",
+        "specificId": "/api/v3/ockovani-zakladni-prehled/{{id}}"
       }
     }
   }

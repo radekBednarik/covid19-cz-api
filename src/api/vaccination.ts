@@ -254,4 +254,79 @@ export class Vaccination {
   ) {
     return await this._request(resource, undefined, id, options);
   }
+
+  public async getRegistrationData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination.registration.collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getRegistrationDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination.registration.collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getReservationsData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination.reservations.collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getReservationsDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination.reservations.collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getConsumptionData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination.consumption.collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getConsumptionDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination.consumption.collection }: CollectionArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getDeathsData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination.deaths.collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getDeathsDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination.deaths.collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getOverviewData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination["basic-overview"].collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getOverviewDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination["basic-overview"].collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
 }
