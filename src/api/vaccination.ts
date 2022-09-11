@@ -30,6 +30,10 @@ export class Vaccination {
     return responseBody;
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani`
+   */
   public async getData({
     queryParams,
     options,
@@ -37,7 +41,10 @@ export class Vaccination {
   }: CollectionArgs) {
     return await this._request(resource, queryParams, undefined, options);
   }
-
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani/{id}`
+   */
   public async getDataOf(
     id: string,
     { options, resource = api.resources.vaccination._.collection }: SpecificIdArgs
@@ -45,6 +52,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-demografie`
+   */
   public async getDemographicData({
     queryParams,
     options,
@@ -53,6 +64,10 @@ export class Vaccination {
     return this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-demografie/{id}`
+   */
   public async getDemographicDataOf(
     id: string,
     { options, resource = api.resources.vaccination.demography.collection }: SpecificIdArgs
@@ -60,6 +75,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-distribuce`
+   */
   public async getDistributionData({
     queryParams,
     options,
@@ -68,6 +87,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-distribuce/{id}`
+   */
   public async getDistributionDataOf(
     id: string,
     { options, resource = api.resources.vaccination.distribution.collection }: SpecificIdArgs
@@ -75,6 +98,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-distribuce-sklad`
+   */
   public async getDistributionStockpileData({
     queryParams,
     options,
@@ -83,6 +110,10 @@ export class Vaccination {
     return this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-distribuce-sklad/{id}`
+   */
   public async getDistributionStockpileDataOf(
     id: string,
     { options, resource = api.resources.vaccination["distribution-stockpile"].collection }: SpecificIdArgs
@@ -90,6 +121,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-geografie`
+   */
   public async getGeographyData({
     queryParams,
     options,
@@ -98,6 +133,10 @@ export class Vaccination {
     return this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-geografie/{id}`
+   */
   public async getGeographyDataOf(
     id: string,
     { options, resource = api.resources.vaccination.geography.collection }: SpecificIdArgs
@@ -105,6 +144,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-hospitalizace`
+   */
   public async getHospitalizationData({
     queryParams,
     options,
@@ -113,6 +156,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-hospitalizace/{id}`
+   */
   public async getHospitalizationDataOf(
     id: string,
     { options, resource = api.resources.vaccination.hospitalization.collection }: SpecificIdArgs
@@ -120,6 +167,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-hospitalizace-tyden`
+   */
   public async getWeeklyHospitalizationData({
     queryParams,
     options,
@@ -128,6 +179,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-hospitalizace-tyden/{id}`
+   */
   public async getWeeklyHospitalizationDataOf(
     id: string,
     { options, resource = api.resources.vaccination["hospitalization-week"].collection }: SpecificIdArgs
@@ -135,6 +190,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-jip`
+   */
   public async getERData({
     queryParams,
     options,
@@ -143,6 +202,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-jip/{id}`
+   */
   public async getERDataOf(
     id: string,
     { options, resource = api.resources.vaccination["hospitalization-er"].collection }: SpecificIdArgs
@@ -150,6 +213,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-jip-tyden`
+   */
   public async getWeeklyERData({
     queryParams,
     options,
@@ -158,6 +225,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-jip-tyden/{id}`
+   */
   public async getWeeklyERDataOf(
     id: string,
     { options, resource = api.resources.vaccination["hospitalization-er-week"].collection }: SpecificIdArgs
@@ -165,6 +236,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-orp`
+   */
   public async getORPData({
     queryParams,
     options,
@@ -173,6 +248,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-orp/{id}`
+   */
   public async getORPDataOf(
     id: string,
     { options, resource = api.resources.vaccination.orp.collection }: SpecificIdArgs
@@ -180,6 +259,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-pozitivni`
+   */
   public async getPositiveData({
     queryParams,
     options,
@@ -188,6 +271,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-pozitivni/{id}`
+   */
   public async getPositiveDataOf(
     id: string,
     { options, resource = api.resources.vaccination.positive.collection }: SpecificIdArgs
@@ -195,6 +282,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-pozitivni-hospitalizovani`
+   */
   public async getPositiveInHospitalsData({
     queryParams,
     options,
@@ -203,6 +294,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-pozitivni-hospitalizovani/{id}`
+   */
   public async getPositiveInHospitalsDataOf(
     id: string,
     { options, resource = api.resources.vaccination["positive-in-hospital"].collection }: SpecificIdArgs
@@ -210,6 +305,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-pozitivni-tyden`
+   */
   public async getWeeklyPositiveData({
     queryParams,
     options,
@@ -218,6 +317,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-pozitivni-tyden/{id}`
+   */
   public async getWeeklyPositiveDataOf(
     id: string,
     { options, resource = api.resources.vaccination["positive-week"].collection }: SpecificIdArgs
@@ -225,6 +328,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-pozitivni65`
+   */
   public async getPositive65Data({
     queryParams,
     options,
@@ -233,6 +340,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-pozitivni65/{id}`
+   */
   public async getPositive65DataOf(
     id: string,
     { options, resource = api.resources.vaccination["positive-65"].collection }: SpecificIdArgs
@@ -240,6 +351,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-profese`
+   */
   public async getProfessionsData({
     queryParams,
     options,
@@ -248,6 +363,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-profese/{id}`
+   */
   public async getProfessionsDataOf(
     id: string,
     { options, resource = api.resources.vaccination.professions.collection }: SpecificIdArgs
@@ -255,6 +374,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-registrace`
+   */
   public async getRegistrationData({
     queryParams,
     options,
@@ -263,6 +386,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-registrace/{id}`
+   */
   public async getRegistrationDataOf(
     id: string,
     { options, resource = api.resources.vaccination.registration.collection }: SpecificIdArgs
@@ -270,6 +397,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-rezervace`
+   */
   public async getReservationsData({
     queryParams,
     options,
@@ -278,6 +409,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-rezervace/{id}`
+   */
   public async getReservationsDataOf(
     id: string,
     { options, resource = api.resources.vaccination.reservations.collection }: SpecificIdArgs
@@ -285,6 +420,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-spotreba`
+   */
   public async getConsumptionData({
     queryParams,
     options,
@@ -293,6 +432,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-spotreba/{id}`
+   */
   public async getConsumptionDataOf(
     id: string,
     { options, resource = api.resources.vaccination.consumption.collection }: CollectionArgs
@@ -300,6 +443,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-umrti`
+   */
   public async getDeathsData({
     queryParams,
     options,
@@ -308,6 +455,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-umrti/{id}`
+   */
   public async getDeathsDataOf(
     id: string,
     { options, resource = api.resources.vaccination.deaths.collection }: SpecificIdArgs
@@ -315,6 +466,10 @@ export class Vaccination {
     return await this._request(resource, undefined, id, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-zakladni-prehled`
+   */
   public async getOverviewData({
     queryParams,
     options,
@@ -323,6 +478,10 @@ export class Vaccination {
     return await this._request(resource, queryParams, undefined, options);
   }
 
+  /**
+   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
+   * `/api/v3/ockovani-zakladni-prehled/{id}`
+   */
   public async getOverviewDataOf(
     id: string,
     { options, resource = api.resources.vaccination["basic-overview"].collection }: SpecificIdArgs
