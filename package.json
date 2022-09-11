@@ -1,9 +1,13 @@
 {
   "name": "covid19-cz-api",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
+  "version": "0.5.0",
+  "description": "Node.js wrapper for official REST API COVID19 data of Czech Ministry of Health.",
+  "main": "./src/index.ts",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/radekBednarik/covid19-cz-api.git"
+  },
   "scripts": {
     "build": "tsc",
     "tsc-lint": "tsc --noEmit --pretty",
@@ -18,8 +22,16 @@
     ]
   },
   "pre-commit": "lint-staged",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "api",
+    "rest",
+    "covid19",
+    "czech",
+    "ministry of health",
+    "wrapper",
+    "data"
+  ],
+  "author": "Radek Bednarik<bednarik.radek@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/chai": "^4.3.3",
