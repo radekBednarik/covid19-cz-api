@@ -1,6 +1,6 @@
 {
   "name": "covid19-cz-api",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Node.js wrapper for official REST API COVID19 data of Czech Ministry of Health.",
   "main": "dist/index.js",
   "type": "module",
