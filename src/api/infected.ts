@@ -2,7 +2,7 @@ import { Response } from "node-fetch";
 import Caller from "../common/base.js";
 import api from "../config/api.json" assert { type: "json" };
 
-import { CollectionArgs, SpecificIdArgs } from "./api.js";
+import { CollectionArgs, SpecificIdArgs } from "./types.js";
 
 export class Infected {
   private _caller;
@@ -13,8 +13,19 @@ export class Infected {
     this.response = this._caller.response;
   }
 
-  private async _request(resource: string, queryParams?: Record<string, string>, options?: RequestInit) {
-    const responseBody = await this._caller.request(resource, queryParams, options);
+  private async _request(
+    resource: string,
+    queryParams?: Record<string, string>,
+    id?: string,
+    options?: RequestInit
+  ) {
+    let responseBody;
+    if (typeof id === "undefined") {
+      responseBody = await this._caller.request(resource, queryParams, options);
+    } else {
+      const fullUrl = `${resource}/${id}`;
+      responseBody = await this._caller.request(fullUrl, undefined, options);
+    }
     this.response = this._caller.response;
     return responseBody;
   }
@@ -28,7 +39,7 @@ export class Infected {
     options,
     resource = api.resources.infected["hospitalized-tests"].collection,
   }: CollectionArgs) {
-    return await this._request(resource, queryParams, options);
+    return await this._request(resource, queryParams, undefined, options);
   }
 
   /**
@@ -39,8 +50,7 @@ export class Infected {
     id: string,
     { options, resource = api.resources.infected["hospitalized-tests"].collection }: SpecificIdArgs
   ) {
-    const fullUrl = `${resource}/${id}`;
-    return await this._request(fullUrl, undefined, options);
+    return await this._request(resource, undefined, id, options);
   }
 
   /**
@@ -52,7 +62,7 @@ export class Infected {
     options,
     resource = api.resources.infected.reinfected.collection,
   }: CollectionArgs) {
-    return await this._request(resource, queryParams, options);
+    return await this._request(resource, queryParams, undefined, options);
   }
 
   /**
@@ -63,8 +73,7 @@ export class Infected {
     id: string,
     { options, resource = api.resources.infected.reinfected.collection }: SpecificIdArgs
   ) {
-    const fullUrl = `${resource}/${id}`;
-    return await this._request(fullUrl, undefined, options);
+    return await this._request(resource, undefined, id, options);
   }
 
   /**
@@ -76,7 +85,7 @@ export class Infected {
     options,
     resource = api.resources.infected["cured-dead-tests"].collection,
   }: CollectionArgs) {
-    return await this._request(resource, queryParams, options);
+    return await this._request(resource, queryParams, undefined, options);
   }
 
   /**
@@ -89,7 +98,6 @@ export class Infected {
     date: string,
     { options, resource = api.resources.infected["cured-dead-tests"].collection }: SpecificIdArgs
   ) {
-    const fullUrl = `${resource}/${date}`;
-    return await this._request(fullUrl, undefined, options);
+    return await this._request(resource, undefined, date, options);
   }
 }

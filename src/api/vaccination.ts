@@ -4,7 +4,7 @@ import api from "../config/api.json" assert { type: "json" };
 
 import { CollectionArgs, SpecificIdArgs } from "./types.js";
 
-export class Incidence {
+export class Vaccination {
   private _caller;
   public response?: Response;
 
@@ -12,7 +12,6 @@ export class Incidence {
     this._caller = new Caller(baseUrl, apiToken);
     this.response = this._caller.response;
   }
-
   private async _request(
     resource: string,
     queryParams?: Record<string, string>,
@@ -30,71 +29,47 @@ export class Incidence {
     return responseBody;
   }
 
-  /**
-   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
-   * `/api/v3/incidence-7-14-cr
-   */
-  public async getStateData({
+  public async getData({
     queryParams,
     options,
-    resource = api.resources.incidence.state.collection,
+    resource = api.resources.vaccination._.collection,
   }: CollectionArgs) {
     return await this._request(resource, queryParams, undefined, options);
   }
 
-  /**
-   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
-   * `/api/v3/incidence-7-14-cr/{id}
-   */
-  public async getStateDataOf(
+  public async getDataOf(
     id: string,
-    { options, resource = api.resources.incidence.state.collection }: SpecificIdArgs
+    { options, resource = api.resources.vaccination._.collection }: SpecificIdArgs
   ) {
     return await this._request(resource, undefined, id, options);
   }
 
-  /**
-   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
-   * `/api/v3/incidence-7-14-kraje
-   */
-  public async getRegionData({
+  public async getDemographicData({
     queryParams,
     options,
-    resource = api.resources.incidence.region.collection,
+    resource = api.resources.vaccination.demography.collection,
   }: CollectionArgs) {
-    return await this._request(resource, queryParams, undefined, options);
+    return this._request(resource, queryParams, undefined, options);
   }
 
-  /**
-   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
-   * `/api/v3/incidence-7-14-kraje/{id}
-   */
-  public async getRegionDataOf(
+  public async getDemographicDataOf(
     id: string,
-    { options, resource = api.resources.incidence.region.collection }: SpecificIdArgs
+    { options, resource = api.resources.vaccination.demography.collection }: SpecificIdArgs
   ) {
     return await this._request(resource, undefined, id, options);
   }
 
-  /**
-   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
-   * `/api/v3/incidence-7-14-okresy
-   */
-  public async getDistrictData({
+  public async getDistributionData({
     queryParams,
     options,
-    resource = api.resources.incidence.district.collection,
+    resource = api.resources.vaccination.distribution.collection,
   }: CollectionArgs) {
     return await this._request(resource, queryParams, undefined, options);
   }
 
-  /**
-   * @see https://onemocneni-aktualne.mzcr.cz/api/v3/docs
-   * `/api/v3/incidence-7-14-okresy/{id}
-   */
-  public async getDistricDataOf(
+  public async getDistributionDataOf(
     id: string,
-    { options, resource = api.resources.incidence.district.collection }: SpecificIdArgs
+    { options, resource = api.resources.vaccination.distribution.collection }: SpecificIdArgs
   ) {
     return await this._request(resource, undefined, id, options);
   }

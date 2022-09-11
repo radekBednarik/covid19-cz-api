@@ -33,6 +33,20 @@
         "collection": "/api/v3/nakazeni-vyleceni-umrti-testy",
         "specificId": "/api/v3/nakazeni-vyleceni-umrti-testy/{{date}}"
       }
+    },
+    "vaccination": {
+      "_": {
+        "collection": "/api/v3/ockovani",
+        "specificId": "/api/v3/ockovani/{{id}}"
+      },
+      "demography": {
+        "collection": "/api/v3/ockovani-demografie",
+        "specificId": "/api/v3/ockovani-demografie/{{id}}"
+      },
+      "distribution": {
+        "collection": "/api/v3/ockovani-distribuce",
+        "specificId": "/api/v3/ockovani-distribuce/{{id}}"
+      }
     }
   }
 }
