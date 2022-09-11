@@ -164,4 +164,94 @@ export class Vaccination {
   ) {
     return await this._request(resource, undefined, id, options);
   }
+
+  public async getORPData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination.orp.collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getORPDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination.orp.collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getPositiveData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination.positive.collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getPositiveDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination.positive.collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getPositiveInHospitalsData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination["positive-in-hospital"].collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getPositiveInHospitalsDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination["positive-in-hospital"].collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getWeeklyPositiveData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination["positive-week"].collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getWeeklyPositiveDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination["positive-week"].collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getPositive65Data({
+    queryParams,
+    options,
+    resource = api.resources.vaccination["positive-65"].collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getPositive65DataOf(
+    id: string,
+    { options, resource = api.resources.vaccination["positive-65"].collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getProfessionsData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination.professions.collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getProfessionsDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination.professions.collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
 }

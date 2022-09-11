@@ -70,6 +70,30 @@
       "hospitalization-er-week": {
         "collection": "/api/v3/ockovani-jip-tyden",
         "specificId": "/api/v3/ockovani-jip-tyden/{{id}}"
+      },
+      "orp": {
+        "collection": "/api/v3/ockovani-orp",
+        "specificId": "/api/v3/ockovani-orp/{{id}}"
+      },
+      "positive": {
+        "collection": "/api/v3/ockovani-pozitivni",
+        "specificId": "/api/v3/ockovani-pozitivni/{{id}}"
+      },
+      "positive-in-hospital": {
+        "collection": "/api/v3/ockovani-pozitivni-hospitalizovani",
+        "specificId": "/api/v3/ockovani-pozitivni-hospitalizovani/{{id}}"
+      },
+      "positive-week": {
+        "collection": "/api/v3/ockovani-pozitivni-tyden",
+        "specificId": "/api/v3/ockovani-pozitivni-tyden/{{id}}"
+      },
+      "positive-65": {
+        "collection": "/api/v3/ockovani-pozitivni65",
+        "specificId": "/api/v3/ockovani-pozitivni65/{{id}}"
+      },
+      "professions": {
+        "collection": "/api/v3/ockovani-profese",
+        "specificId": "/api/v3/ockovani-profese/{{id}}"
       }
     }
   }
