@@ -1,0 +1,6 @@
+.husky/
+test/
+src/
+.eslintrc.cjs
+.gitignore
+`
