@@ -12,6 +12,7 @@ export class Vaccination {
     this._caller = new Caller(baseUrl, apiToken);
     this.response = this._caller.response;
   }
+
   private async _request(
     resource: string,
     queryParams?: Record<string, string>,
@@ -70,6 +71,96 @@ export class Vaccination {
   public async getDistributionDataOf(
     id: string,
     { options, resource = api.resources.vaccination.distribution.collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getDistributionStockpileData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination["distribution-stockpile"].collection,
+  }: CollectionArgs) {
+    return this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getDistributionStockpileDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination["distribution-stockpile"].collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getGeographyData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination.geography.collection,
+  }: CollectionArgs) {
+    return this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getGeographyDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination.geography.collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getHospitalizationData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination.hospitalization.collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getHospitalizationDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination.hospitalization.collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getWeeklyHospitalizationData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination["hospitalization-week"].collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getWeeklyHospitalizationDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination["hospitalization-week"].collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getERData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination["hospitalization-er"].collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getERDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination["hospitalization-er"].collection }: SpecificIdArgs
+  ) {
+    return await this._request(resource, undefined, id, options);
+  }
+
+  public async getWeeklyERData({
+    queryParams,
+    options,
+    resource = api.resources.vaccination["hospitalization-er-week"].collection,
+  }: CollectionArgs) {
+    return await this._request(resource, queryParams, undefined, options);
+  }
+
+  public async getWeeklyERDataOf(
+    id: string,
+    { options, resource = api.resources.vaccination["hospitalization-er-week"].collection }: SpecificIdArgs
   ) {
     return await this._request(resource, undefined, id, options);
   }

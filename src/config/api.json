@@ -46,6 +46,30 @@
       "distribution": {
         "collection": "/api/v3/ockovani-distribuce",
         "specificId": "/api/v3/ockovani-distribuce/{{id}}"
+      },
+      "distribution-stockpile": {
+        "collection": "/api/v3/ockovani-distribuce-sklad",
+        "specificId": "/api/v3/ockovani-distribuce-sklad/{{id}}"
+      },
+      "geography": {
+        "collection": "/api/v3/ockovani-geografie",
+        "specificId": "/api/v3/ockovani-geografie/{{id}}"
+      },
+      "hospitalization": {
+        "collection": "/api/v3/ockovani-hospitalizace",
+        "specificId": "/api/v3/ockovani-hospitalizace/{{id}}"
+      },
+      "hospitalization-week": {
+        "collection": "/api/v3/ockovani-hospitalizace-tyden",
+        "specificId": "/api/v3/ockovani-hospitalizace-tyden/{{id}}"
+      },
+      "hospitalization-er": {
+        "collection": "/api/v3/ockovani-jip",
+        "specificId": "/api/v3/ockovani-jip/{{id}}"
+      },
+      "hospitalization-er-week": {
+        "collection": "/api/v3/ockovani-jip-tyden",
+        "specificId": "/api/v3/ockovani-jip-tyden/{{id}}"
       }
     }
   }
