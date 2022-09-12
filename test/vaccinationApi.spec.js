@@ -4,7 +4,7 @@ import apiConfig from "./data/apiConfig.json" assert { type: "json" };
 import { Vaccination } from "../dist/api/vaccination.js";
 
 describe("vaccination api v3", function () {
-  const api = new Vaccination(apiConfig.baseUrl, apiConfig.apiToken);
+  const api = new Vaccination(apiConfig.apiToken);
 
   context("GET /api/v3/ockovani", function () {
     let check, body;

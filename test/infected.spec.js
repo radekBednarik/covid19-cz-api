@@ -4,7 +4,7 @@ import apiConfig from "./data/apiConfig.json" assert { type: "json" };
 import { Infected } from "../dist/api/infected.js";
 
 describe("infected api v3", function () {
-  const api = new Infected(apiConfig.baseUrl, apiConfig.apiToken);
+  const api = new Infected(apiConfig.apiToken);
 
   context("GET /api/v3/nakazeni-hospitalizace-testy", function () {
     let check, body;

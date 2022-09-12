@@ -12,7 +12,7 @@ Endpoints are thematically grouped under classes. Usage is pretty much the same,
 import {Vaccination} from "covid19-cz-api";
 
 (async () => {
-    const api = new Vaccination("apiBaseUrl", "yourApiToken");
+    const api = new Vaccination("yourApiToken");
 
     const [status, body] =  await api.getOverviewData({
         queryParams: { page: "1", itemsPerPage: "100" },

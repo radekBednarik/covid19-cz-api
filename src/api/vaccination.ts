@@ -8,8 +8,8 @@ export class Vaccination {
   private _caller;
   public response?: Response;
 
-  constructor(baseUrl: string, apiToken: string) {
-    this._caller = new Caller(baseUrl, apiToken);
+  constructor(apiToken: string, baseUrl: string = api.baseUrl) {
+    this._caller = new Caller(apiToken, baseUrl);
     this.response = this._caller.response;
   }
 

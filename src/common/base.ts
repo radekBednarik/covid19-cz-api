@@ -1,11 +1,13 @@
 import fetch, { RequestInit, Response } from "node-fetch";
 
+import api from "../config/api.json" assert { type: "json" };
+
 export default class Caller {
   private readonly _baseUrl;
   private readonly _apiToken;
   public response?: Response;
 
-  constructor(baseUrl: string, apiToken: string) {
+  constructor(apiToken: string, baseUrl: string = api.baseUrl) {
     this._baseUrl = baseUrl;
     this._apiToken = apiToken;
     this.response = undefined;

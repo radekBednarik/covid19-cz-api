@@ -4,7 +4,7 @@ import apiConfig from "./data/apiConfig.json" assert { type: "json" };
 import { Incidence } from "../dist/api/incidence.js";
 
 describe("incidence api v3", function () {
-  const api = new Incidence(apiConfig.baseUrl, apiConfig.apiToken);
+  const api = new Incidence(apiConfig.apiToken);
 
   context("GET /api/v3/incidence-7-14-cr", function () {
     let check, body;

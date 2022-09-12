@@ -8,7 +8,7 @@ import apiConfig from "./data/apiConfig.json" assert { type: "json" };
 import { Hospitalization } from "../dist/api/hospitalization.js";
 
 describe("hospitalization api v3", function () {
-  const api = new Hospitalization(apiConfig.baseUrl, apiConfig.apiToken);
+  const api = new Hospitalization(apiConfig.apiToken);
 
   context("GET /api/v3/hospitalizace", function () {
     let check, body;
